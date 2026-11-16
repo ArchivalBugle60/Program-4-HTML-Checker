@@ -10,14 +10,17 @@ public class HTMLManager {
          
       }
       // creating a new queue
-      tags = new LinkedList<HTMLTag>();
+      tag = new LinkedList<HTMLTag>();
       
       // adding elements to tags
       for (int i  = 0; i < html.size(); i++) {
          HTMLTag cur = html.remove();
-         tags.add(cur);
+         tag.add(cur);
          html.add(cur);
       }
+   }
+   public Queue<HTMLTag> getTags() {
+      return tag;
    }
    
 }
