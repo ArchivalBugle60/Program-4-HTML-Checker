@@ -24,13 +24,15 @@ public class HTMLManager {
    }
    
    // to string method
-   public string toString() {
+   public String toString() {
       String res = "";
       for (int i = 0; i < tags.size(); i++) {
          HTMLTag cur = tags.remove();
+         res = res + cur.toString().trim();
+         tags.add(cur);
+      
       }
-      res = res + cur.toString().trim();
-      tags.add(cur);
+   
       return res;
    }
    
