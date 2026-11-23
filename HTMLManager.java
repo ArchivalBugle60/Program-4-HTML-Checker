@@ -54,10 +54,10 @@ public class HTMLManager {
                // there are 3 situations t handle (stack empty, top matches and stack not empty, stack not empty and top not matching)
                // check whether stack is empty
                if (stack.isEmpty()) { // discard it
-               } else if (stack.peek().matches(cur)) {
+               } else if (stack.peek().matches(cur)) {// If the tag on the top of the stack matches the tag you are currently looking at, then you should add the closing tag back to the queue and remove the opening tag from the stack. 
                   tags.add(cur);
                   stack.pop();
-               } else {
+               } else { // If the tag on the top of the stack does not match the closing tag you found, then the writer of the HTML page made a mistake. To fix the mistake, you should add a new closing tag that matches the opening one at the top of the stack
                   tags.add(stack.peek().getMatching());
                   stack.pop();
                   tags.add(cur);
